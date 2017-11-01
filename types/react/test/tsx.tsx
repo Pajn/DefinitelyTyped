@@ -63,3 +63,13 @@ const StatelessComponentWithoutProps: React.SFC = (props) => {
     return <div />;
 };
 <StatelessComponentWithoutProps />;
+
+// SFC should work with arrays in React 16
+const StatelessComponent3: React.SFC<SCProps> = ({foo}) => {
+    return [
+        <div key="1">{foo}</div>,
+        <div key="2">{foo}</div>
+    ];
+};
+
+<StatelessComponent3 foo={2}>SFC</StatelessComponent3>;
